@@ -4,6 +4,7 @@ import NavigationBar from './components/Navbar';
 import Welcome from './components/Welcome';
 import ReservationForm from './components/ReservationForm';
 import Reservations from './components/Reservations';
+import ErrorPage from './components/ErrorPage';
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Route path="/reservation" element={<ReservationForm />} />
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/" element={<Welcome />} />
-            <Route path="*" element={<img src='/images/notfound.jpeg' width="100%" />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
       </Suspense>

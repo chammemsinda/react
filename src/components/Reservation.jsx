@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { deleteReservation } from '../services/api';
+import axios from 'axios';
 
 const ReservationCard = ({ reservation, onDelete }) => {
   // Fonction pour formater la date
@@ -10,11 +10,11 @@ const ReservationCard = ({ reservation, onDelete }) => {
     return new Date(dateString).toLocaleDateString('fr-FR', options);
   };
 
-  // Fonction pour gérer la suppression d'une réservation
-  const handleDeleteReservation = async () => {
+  // Fonction pour supprimer une réservation
+  const deleteReservation = async () => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cette réservation ?')) {
       try {
-        await deleteReservation(reservation.id);
+        await axios.delete(`http://localhost:3001/reservations/${reservation.id}`);
         onDelete(reservation.id);
       } catch (error) {
         console.error('Erreur lors de la suppression de la réservation:', error);
@@ -62,7 +62,7 @@ const ReservationCard = ({ reservation, onDelete }) => {
         <div className="d-flex justify-content-between mt-3">
           <Button 
             variant="danger" 
-            onClick={handleDeleteReservation}
+            onClick={deleteReservation}
           >
             Supprimer
           </Button>

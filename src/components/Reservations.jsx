@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { getReservations } from '../services/api';
-import ReservationCard from './ReservationCard';
+import ReservationCard from './Reservation';
 
 const Reservations = () => {
   // État pour stocker les réservations

@@ -35,6 +35,11 @@ export const getReservations = async () => {
   return await axios.get(reservationUrl);
 };
 
+// Fonction pour supprimer une réservation
+export const deleteReservation = async (id) => {
+  return await axios.delete(`${reservationUrl}/${id}`);
+};
+
 // Fonction pour incrémenter le nombre de vues d'une propriété
 export const incrementPropertyViews = async (property) => {
   try {

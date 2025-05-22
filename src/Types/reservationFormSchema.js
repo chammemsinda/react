@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-
+// Schéma pour le formulaire de réservation avec upload d'image
 export const reservationSchema = z.object({
   nom: z.string().min(1, "Le nom est requis"),
   email: z.string().email("Email invalide"),
@@ -10,4 +10,5 @@ export const reservationSchema = z.object({
   image: z.instanceof(FileList)
     .refine(files => files.length > 0, "Une image est requise")
 });
+
 export default reservationSchema;
