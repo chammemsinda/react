@@ -1,0 +1,31 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "name": "Maison de campagne",
+      "adresse": "Belle maison à la campagne avec jardin.",
+      "prix": 500,
+      "nbvue": 12,
+      "available": false
+    },
+    {
+      "id": "2",
+      "name": "Appartement en ville",
+      "adresse": "Appartement moderne au centre-ville.",
+      "prix": 800,
+      "nbvue": 3,
+      "available": false
+    }
+  ],
+  "reservations": [
+    {
+      "id": "05de",
+      "nom": "sinda",
+      "telephone": "28139188",
+      "dateDebut": "2025-05-15",
+      "dateFin": "2025-05-30",
+      "propertyId": "1",
+      "dateReservation": "2025-05-21T16:56:40.581Z"
+    }
+  ]
+}
